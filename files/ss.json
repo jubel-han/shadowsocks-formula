@@ -1,0 +1,10 @@
+{
+    "server":"{{ config.server_host }}",
+    "server_port":{{ config.server_port }},
+    "local_port":{{ config.local_port }},
+    "password":"{{ password }}",
+    "timeout":300,
+    "method":"aes-256-cfb",
+    "workers":500,
+    "fast_open": true
+}

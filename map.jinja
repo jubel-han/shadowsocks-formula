@@ -1,0 +1,23 @@
+{% set config = salt['pillar.get']('shadowsocks', {
+    'password': 'default_password',
+    'ss-client': {
+        'local_port': 1080,
+        'server_host': '0.0.0.0',
+        'server_port': 5500,
+    },
+    'kcptun-client': {
+        'listen_port': 5500,
+        'remote_server': 'ss.example.com',
+        'remote_port': 5400,
+    },
+    'kcptun-server': {
+        'listen_port': 5400,
+        'target_server': '127.0.0.1',
+        'target_port': 5500,
+    },
+    'ss-server': {
+        'server_host': '0.0.0.0',
+        'server_port': 5500,
+        'local_port': 1080,
+    },
+}, merge=True) %}
